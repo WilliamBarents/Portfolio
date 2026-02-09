@@ -1,0 +1,42 @@
+<div class="header">
+  <div class="header-container container">
+    <a href="#" class="header-container__logo"><span>WB</span><span>.</span></a>
+
+    <ul class="header-container__nav" [ngClass]="{ 'is-open': menuOpen }">
+      <li
+        class="item"
+        *ngFor="let nav of navItems"
+        [class.active]="activeSection === nav.id"
+      >
+        <a
+          class="item-link"
+          href="javascript:void(0)"
+          (click)="onNavClick(nav.id)"
+        >
+          {{ nav.label }}
+        </a>
+        <div class="item-indicator"></div>
+      </li>
+    </ul>
+
+    <div class="header-container__socials">
+      <a
+        [href]="item.value"
+        class="links"
+        *ngFor="let item of contactData.contacts"
+        ><img
+          [src]="getContactIcon(item.icon)"
+          [alt]="item.type"
+          class="links-icon"
+      /></a>
+    </div>
+
+    <div
+      class="header-container__toggle"
+      (click)="toggleMenu()"
+      [ngClass]="{ 'is-open': menuOpen }"
+    >
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>

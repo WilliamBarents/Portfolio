@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "type": "Email",
+      "label": "wbarents84@gmail.com",
+      "value": "mailto:wbarents84@gmail.com",
+      "icon": "email"
+    },
+    {
+      "type": "LinkedIn",
+      "label": "linkedin.com/in/williambarents",
+      "value": "https://www.linkedin.com/in/william-barents-246669173/",
+      "icon": "linkedin"
+    },
+    {
+      "type": "GitHub",
+      "label": "github.com/WilliamBarents",
+      "value": "https://github.com/WilliamBarents",
+      "icon": "github"
+    },
+    {
+      "type": "YouTube",
+      "label": "William Barents",
+      "value": "https://www.youtube.com/@wbarents",
+      "icon": "youtube"
+    }
+  ]
+}

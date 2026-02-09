@@ -1,0 +1,67 @@
+<div
+  class="videos"
+  id="videos"
+  appScrollReveal
+  [threshold]="0.15"
+  rootMargin="0px 0px -100px 0px"
+  [triggerOnce]="true"
+  data-scroll-reveal
+>
+  <div class="videos-container container">
+    <label class="videos-container__label">Video Walkthroughs</label>
+
+    <p class="videos-container__text">
+      UI walkthroughs of production work that is no longer publicly accessible.
+      Optional viewing — no autoplay.
+    </p>
+
+    <div class="videos-container__walkthroughs">
+      <article class="card card-base" *ngFor="let video of videos">
+        <div class="card-wrapper">
+          <div class="card-wrapper__media">
+            <ng-container *ngIf="activeVideoId !== video.id; else player">
+              <div class="video-thumb" (click)="playVideo(video.id)">
+                <img
+                  [src]="getThumbnail(video.youtubeId)"
+                  alt="{{ video.title }}"
+                />
+                <button class="play-btn" type="button">▶</button>
+              </div>
+
+              <ng-template #player>
+                <iframe
+                  [src]="getEmbedUrl(video.youtubeId)"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                ></iframe>
+              </ng-template>
+            </ng-container>
+
+            <ng-template #player>
+              <iframe
+                [src]="getEmbedUrl(video.youtubeId)"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </ng-template>
+          </div>
+
+          <h3 class="card-wrapper__title">{{ video.title }}</h3>
+          <p class="card-wrapper__text">{{ video.description }}</p>
+        </div>
+
+        <a
+          [href]="'https://www.youtube.com/watch?v=' + video.youtubeId"
+          class="card-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Watch on YouTube</span>
+          <img src="./../../../assets/icons/link-icon.png" alt="Link icon" />
+        </a>
+      </article>
+    </div>
+  </div>
+
+  <div class="divider-gradient"></div>
+</div>

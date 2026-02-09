@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "MCE Group",
+    "url": "https://mceg.io",
+    "descriptions": [
+      "Contributed to the public-facing website, ensuring clarity and responsive design",
+      "Worked on frontend presentation layer aligned with fintech branding standards",
+      "Supported cross-team collaboration on user-facing content delivery"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Outline Investment",
+    "url": "https://outlineinvestment.io",
+    "descriptions": [
+      "Implemented responsive UI components for an investment-focused platform",
+      "Collaborated on design iterations to improve usability and visual hierarchy",
+      "Ensured consistency across layouts and interaction patterns"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Nestoris",
+    "url": "https://nestoris.io",
+    "descriptions": [
+      "Contributed to multiple frontend iterations and redesigns",
+      "Improved UI structure and data presentation clarity",
+      "Collaborated across product and engineering during early-stage development"
+    ]
+  }
+]

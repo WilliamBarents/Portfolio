@@ -1,0 +1,26 @@
+{
+  "lastUpdated": "February 2025",
+  "items": [
+    {
+      "id": "cv",
+      "title": "Curriculum Vitae",
+      "type": "CV",
+      "description": "Full professional CV reflecting current experience, responsibilities, and technical scope, as shared with recruiters and hiring managers.",
+      "file": "assets/docs/2026-02-04_CV_William_Barents.pdf"
+    },
+    {
+      "id": "rec-manager",
+      "title": "Recommendation Letter — Engineering Manager",
+      "type": "Recommendation",
+      "description": "Written reference from a former direct engineering manager, outlining technical ownership, collaboration style, and professional contribution.",
+      "file": "assets/docs/2026-02-05_Recommendation_Letter.pdf"
+    },
+    {
+      "id": "cover-letter",
+      "title": "Cover Letter Template",
+      "type": "Cover Letter",
+      "description": "Structured cover letter template used as a foundation for role-specific applications, adaptable per opportunity.",
+      "file": "assets/docs/2026-02-04_Cover_Letter.pdf"
+    }
+  ]
+}
