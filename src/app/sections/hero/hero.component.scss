@@ -1,0 +1,134 @@
+.hero {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+
+  &-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+
+      /* Grid lines */
+      background-image:
+        linear-gradient(hsl(262 47% 58% / 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, hsl(262 47% 58% / 0.03) 1px, transparent 1px);
+
+      background-size: 60px 60px;
+
+      /* Radial fade (mask) */
+      mask-image: radial-gradient(
+        ellipse 50% 50% at 50% 50%,
+        black 40%,
+        transparent 100%
+      );
+
+      -webkit-mask-image: radial-gradient(
+        ellipse 50% 50% at 50% 50%,
+        black 40%,
+        transparent 100%
+      );
+    }
+
+    &__pill {
+      align-items: center;
+      background-color: hsl(var(--primary) / 0.1);
+      border: 1px solid hsl(var(--primary) / 0.3);
+      border-radius: var(--radius-full);
+      color: hsl(var(--primary));
+      display: flex;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-2xl);
+      padding: var(--space-xs) var(--space-md);
+      width: fit-content;
+
+      .text {
+        font-size: var(--font-size-sm);
+      }
+    }
+
+    &__name {
+      color: hsl(var(--muted-foreground));
+      font-weight: 500;
+      margin-bottom: var(--space-md);
+    }
+
+    &__title {
+      font-size: var(--space-3xl);
+      font-weight: 700;
+    }
+
+    &__stack {
+      display: flex;
+      font-size: var(--space-lg);
+      gap: var(--space-sm);
+      list-style: none;
+      padding: 0;
+
+      .stack {
+        &.main {
+          color: hsl(var(--primary));
+        }
+      }
+    }
+
+    &__text {
+      font-size: calc(var(--space-md) + 2px);
+      margin-bottom: var(--space-xl);
+    }
+
+    &__cta {
+      display: flex;
+      gap: var(--space-sm);
+
+      .cta {
+        align-items: center;
+        display: flex;
+        gap: var(--space-sm);
+        text-decoration: none;
+
+        &-icon {
+          height: var(--space-lg);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 824px) {
+  .hero {
+    &-container {
+      &__title {
+        font-size: calc(var(--space-xl) + 4px);
+      }
+
+      &__stack {
+        font-size: calc(var(--space-md) + 4px);
+      }
+
+      &__text {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .hero {
+    &-container {
+      &__cta {
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+}

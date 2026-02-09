@@ -1,0 +1,115 @@
+.zyneera {
+  &-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-4xl) var(--space-lg);
+
+    &__label {
+      color: hsl(var(--primary));
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: calc(var(--space-2xl) - 8px);
+    }
+
+    &__title {
+      display: flex;
+      gap: calc(var(--space-lg) - 4px);
+      margin-bottom: var(--space-lg);
+
+      .icon {
+        align-items: center;
+        background-color: hsl(var(--primary) / 0.1);
+        border: 1px solid hsl(var(--primary) / 0.2);
+        border-radius: var(--radius-lg);
+        display: flex;
+        height: var(--space-2xl);
+        justify-content: center;
+        padding: var(--space-xs);
+        width: var(--space-2xl);
+
+        &-img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+
+        &-heading {
+          font-size: var(--font-size-xl);
+          font-weight: 700;
+          margin: 0;
+        }
+
+        &-subheading {
+          font-size: var(--font-size-sm);
+        }
+      }
+    }
+
+    &__text {
+      font-size: var(--font-size-md);
+    }
+
+    &__card {
+      width: 80%;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+
+        &-heading {
+          font-size: var(--font-size-lg);
+          margin: 0;
+        }
+
+        &-status {
+          align-items: center;
+          background-color: hsl(var(--primary) / 0.1);
+          border-radius: var(--radius-full);
+          color: hsl(var(--primary));
+          display: flex;
+          gap: var(--space-sm);
+          margin-bottom: var(--space-md);
+          padding: var(--space-3xs) var(--space-2xs);
+          width: fit-content;
+
+          &__text {
+            font-size: var(--font-size-sm);
+          }
+        }
+      }
+
+      .description {
+      }
+
+      .focus {
+        margin: 0;
+
+        span {
+          font-weight: 800;
+        }
+      }
+    }
+
+    &__disclaimer {
+      font-style: italic;
+      margin-top: var(--space-lg);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .zyneera {
+    &-container {
+      &__card {
+        width: 100%;
+      }
+    }
+  }
+}

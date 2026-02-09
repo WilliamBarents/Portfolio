@@ -1,0 +1,95 @@
+.contributions {
+  &-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-4xl) var(--space-lg);
+
+    &__label {
+      color: hsl(var(--primary));
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: calc(var(--space-2xl) - 8px);
+    }
+
+    &__text {
+      margin-bottom: var(--space-xl);
+      max-width: 786px;
+    }
+
+    &__sites {
+      display: grid;
+      grid-template-columns: 1fr; // mobile default
+      gap: var(--space-lg);
+
+      /* Tablet */
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Desktop */
+      @media (min-width: 1100px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .site {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-wrapper {
+          &__title {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-lg);
+
+            .name {
+              font-size: var(--font-size-md);
+              margin-bottom: 0;
+            }
+
+            .icon {
+              height: var(--space-md);
+              width: var(--space-md);
+            }
+          }
+
+          &__description {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+
+            .text {
+              &::marker {
+                color: hsl(var(--primary));
+              }
+            }
+          }
+        }
+
+        &-link {
+          align-items: center;
+          border-top: 1px solid hsl(var(--border));
+          display: flex;
+          gap: var(--space-md);
+          padding-top: var(--space-md);
+          margin-top: var(--space-md);
+          text-decoration: none;
+          width: fit-content;
+
+          span {
+            color: hsl(var(--primary));
+          }
+
+          img {
+            height: var(--space-md);
+            width: var(--space-md);
+          }
+        }
+      }
+    }
+  }
+}

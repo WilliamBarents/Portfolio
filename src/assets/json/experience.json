@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Senior Frontend Engineer",
+    "company": "MCE Group",
+    "engagement": "Contract",
+    "location": {
+      "type": "Remote",
+      "region": "Netherlands"
+    },
+    "period": {
+      "start": "Apr 2023",
+      "end": "Feb 2025"
+    },
+    "summary": "Owned frontend and supported backend systems for production fintech and data-driven platforms.",
+    "responsibilities": [
+      "Built complex Angular dashboards with secure API integrations and real-time data flows",
+      "Supported secure credential handling and role-based access control implementations",
+      "Developed Telegram bots for operational monitoring and automation",
+      "Contributed to multiple product iterations across fintech and token-related platforms",
+      "Collaborated closely with backend and contract-adjacent development teams"
+    ],
+    "technologies": [
+      "Angular",
+      "TypeScript",
+      "Firebase",
+      "REST APIs",
+      "Cloud Services",
+      "Telegram Bot API"
+    ]
+  },
+  {
+    "title": "Frontend Engineer",
+    "company": "Youwe",
+    "engagement": "Freelance",
+    "location": {
+      "type": "Remote",
+      "region": "Netherlands"
+    },
+    "period": {
+      "start": "Mar 2022",
+      "end": "Mar 2023"
+    },
+    "summary": "Served as primary frontend developer on e-commerce projects, building conversion-focused interfaces.",
+    "responsibilities": [
+      "Led mobile-first redesigns aligned with modern UX/UI practices",
+      "Built e-commerce product pages and checkout flows focused on conversion",
+      "Developed reusable templates and CMS blocks",
+      "Paired with backend engineers on Magento integrations",
+      "Contributed to early React and Next.js adoption for headless commerce"
+    ],
+    "technologies": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Magento",
+      "SCSS"
+    ]
+  }
+]
