@@ -1,1 +1,334 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+
+/* ======================================================
+   Fonts
+====================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+
+/* ======================================================
+   ROOT — DARK MODE ONLY (HSL TOKENS)
+====================================================== */
+:root {
+  /* ===== Typography ===== */
+  --font-sans:
+    "Source Sans Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Arial, sans-serif;
+  --font-serif: "Source Serif Pro", Georgia, serif;
+  --font-mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ===== Spacing (4px atomic) ===== */
+  --space-unit: 4px;
+  --space-3xs: var(--space-unit); /* 4 */
+  --space-2xs: calc(var(--space-unit) * 1.5); /* 6 */
+  --space-xs: calc(var(--space-unit) * 2); /* 8 */
+  --space-sm: calc(var(--space-unit) * 3); /* 12 */
+  --space-md: calc(var(--space-unit) * 4); /* 16 */
+  --space-lg: calc(var(--space-unit) * 6); /* 24 */
+  --space-xl: calc(var(--space-unit) * 8); /* 32 */
+  --space-2xl: calc(var(--space-unit) * 12); /* 48 */
+  --space-3xl: calc(var(--space-unit) * 16); /* 64 */
+  --space-4xl: calc(var(--space-unit) * 24); /* 96 */
+
+  /* ===== Radius ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ===== Core Colors (MATCHED) ===== */
+  --background: 24 9% 10%;
+  --foreground: 60 9% 97%;
+
+  --card: 12 6% 15%;
+  --card-foreground: 60 9% 97%;
+
+  --popover: 30 6% 25%;
+  --popover-foreground: 60 9% 97%;
+
+  --primary: 43 96% 56%;
+  --primary-foreground: 20 91% 14%;
+
+  --secondary: 24 5% 44%;
+  --secondary-foreground: 60 9% 97%;
+
+  --muted: 24 5% 44%;
+  --muted-foreground: 60 9% 97%;
+
+  --accent: 25 83% 14%;
+  --accent-foreground: 47 95% 53%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 85% 97%;
+
+  --border: 33 5% 32%;
+  --input: 33 5% 32%;
+  --ring: 43 96% 56%;
+
+  /* ===== Gradients & Effects ===== */
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(262 47% 58%) 0%,
+    hsl(280 45% 55%) 100%
+  );
+
+  --gradient-glow: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    hsl(262 47% 58% / 0.15) 0%,
+    transparent 70%
+  );
+
+  --gradient-card: linear-gradient(
+    180deg,
+    hsl(240 10% 10%) 0%,
+    hsl(240 10% 8%) 100%
+  );
+
+  /* ===== Shadows ===== */
+  --shadow-2xs: 0 1px 3px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0 1px 3px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 1px 3px hsl(0 0% 0% / 0.25);
+  --shadow-elevated:
+    0 8px 30px -10px hsl(0 0% 0% / 0.5), 0 0 20px -5px hsl(262 47% 58% / 0.1);
+
+  --transition-base: 250ms ease;
+}
+
+/* ======================================================
+   Base Styles
+====================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Inter", var(--font-sans);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   Buttons Stylings
+====================================================== */
+.primary-btn {
+  background-color: hsl(var(--primary));
+  border-radius: var(--radius-lg);
+  color: hsl(var(--background));
+  height: var(--space-2xl);
+  padding: 0 var(--space-lg);
+  width: fit-content;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  color: hsl(var(--foreground));
+  height: var(--space-2xl);
+  padding: 0 var(--space-lg);
+  width: fit-content;
+}
+
+/* ======================================================
+   Global Utilities
+====================================================== */
+.divider-gradient {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(262 47% 58% / 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-md);
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: hsl(var(--primary));
+  margin-bottom: var(--space-xl);
+}
+
+.card-base {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: hsl(var(--primary));
+}
+
+.icon-no-border {
+  align-items: center;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  height: calc(var(--space-2xl) - 8px);
+  justify-content: center;
+  padding: var(--space-xs);
+  width: calc(var(--space-2xl) - 8px);
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.icon-border {
+  align-items: center;
+  background-color: hsl(var(--primary) / 0.1);
+  border: 1px solid hsl(var(--primary) / 0.2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  height: var(--space-2xl);
+  justify-content: center;
+  padding: var(--space-xs);
+  width: var(--space-2xl);
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  border: 1px solid hsl(0 0% 100% / 0.05);
+}
+
+.gradient-text {
+  background-image: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gradient-glow);
+}
+
+.indicator {
+  background-color: hsl(var(--primary));
+  border-radius: var(--radius-full);
+  display: block;
+  height: var(--space-xs);
+  width: var(--space-xs);
+  animation: blinker 1.8s ease-in-out infinite;
+  box-shadow: 0 0 0 hsl(var(--primary) / 0.4);
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 0.35;
+    transform: scale(1);
+    box-shadow: 0 0 0 hsl(var(--primary) / 0.3);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.25);
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.6);
+  }
+
+  70% {
+    opacity: 0.6;
+    transform: scale(1.05);
+    box-shadow: 0 0 4px hsl(var(--primary) / 0.4);
+  }
+
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+    box-shadow: 0 0 0 hsl(var(--primary) / 0.3);
+  }
+}
+
+/* ======================================================
+   Motion
+====================================================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-up 600ms ease-out forwards;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hide {
+  display: none;
+}

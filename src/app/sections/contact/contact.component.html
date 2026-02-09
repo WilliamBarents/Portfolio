@@ -1,0 +1,51 @@
+<div class="contact" id="contact">
+  <div class="divider-gradient"></div>
+
+  <div class="contact-container container">
+    <label class="contact-container__label">Contact</label>
+
+    <h1 class="contact-container__title">Let's work together</h1>
+
+    <p class="contact-container__description">
+      Open to remote roles and international contracts. If you're building
+      something interesting, I'd love to hear from you.
+    </p>
+
+    <div class="contact-container__pill">
+      <span class="indicator"></span>
+
+      <div class="text">Available for Remote Roles • EU-friendly timezone</div>
+    </div>
+
+    <div class="contact-container__items">
+      <a
+        [href]="item.value"
+        class="item card-base"
+        target="_blank"
+        *ngFor="let item of contactData.contacts"
+      >
+        <div class="item-title">
+          <div class="item-title__icon icon-border">
+            <img
+              [src]="getContactIcon(item.icon)"
+              [alt]="item.icon"
+              class="img"
+            />
+          </div>
+
+          <div class="item-title__text">
+            <h2 class="heading">{{ item.type }}</h2>
+            <span class="subheading">{{ item.label }}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <a
+      href="mailto:wbarents84@gmail.com"
+      class="contact-container__button primary-btn"
+      ><img src="./../../../assets/icons/plane-icon.png" alt="Email icon" />
+      <span> Send an Email </span>
+    </a>
+  </div>
+</div>

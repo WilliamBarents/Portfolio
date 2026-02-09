@@ -1,0 +1,20 @@
+[
+  {
+    "id": "mce-ui",
+    "youtubeId": "qoD8A5jmORo",
+    "title": "MCE Group — Platform UI Walkthrough",
+    "description": "Frontend contributions to the MCE Group platform, focusing on responsive design, visual clarity, and professional fintech-grade presentation across multiple iterations."
+  },
+  {
+    "id": "nestoris-ui",
+    "youtubeId": "ThPmCBN-t20",
+    "title": "Nestoris — Analytics Platform Interface Overview",
+    "description": "Frontend work on an internal analytics platform, building and refining dashboard interfaces for data visibility, usability, and operational insight."
+  },
+  {
+    "id": "outline-ui",
+    "youtubeId": "syO8bIy-uJ4",
+    "title": "Outline Investment — Web Platform Overview",
+    "description": "Frontend development for an investment platform’s web presence, supporting responsive layouts, UI consistency, and clear product communication."
+  }
+]

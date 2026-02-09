@@ -1,0 +1,30 @@
+{
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        "Angular",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS/SCSS"
+      ]
+    },
+    {
+      "category": "Backend & Services",
+      "items": [
+        "Firebase Auth",
+        "Firestore",
+        "Cloud Functions",
+        "REST APIs",
+        "Secure Integrations"
+      ]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": ["Git", "Docker", "DigitalOcean", "Google Cloud"]
+    }
+  ]
+}

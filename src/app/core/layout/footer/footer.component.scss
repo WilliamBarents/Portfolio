@@ -1,0 +1,8 @@
+.footer {
+  &-container {
+    &__author {
+      margin: 0;
+      padding: calc(var(--space-2xl) - 8px) var(--space-lg);
+    }
+  }
+}

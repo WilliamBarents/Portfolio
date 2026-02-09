@@ -1,0 +1,143 @@
+.videos {
+  &-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-4xl) var(--space-lg);
+
+    &__label {
+      color: hsl(var(--primary));
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: calc(var(--space-2xl) - 8px);
+    }
+
+    &__text {
+      margin-bottom: var(--space-xl);
+      max-width: 786px;
+    }
+
+    &__walkthroughs {
+      display: grid;
+      gap: var(--space-md);
+
+      /* Responsive auto-fit grid */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+      /* Optional: keep cards aligned nicely */
+      align-items: start;
+
+      /* If your container has padding, this helps prevent overflow */
+      width: 100%;
+
+      .card {
+        width: 100%;
+
+        &-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-md);
+
+          &__media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background-color: hsl(var(--background));
+            border: 1px solid hsl(var(--border));
+          }
+
+          iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+          }
+
+          .video-thumb {
+            position: absolute;
+            inset: 0;
+            cursor: pointer;
+
+            img {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              pointer-events: none;
+              background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(0, 0, 0, 0.35)
+              );
+            }
+          }
+
+          &__title {
+            font-size: var(--font-size-md);
+            font-weight: 600;
+          }
+
+          &__text {
+            font-size: var(--font-size-sm);
+          }
+        }
+
+        &-link {
+          align-items: center;
+          color: hsl(var(--primary));
+          display: flex;
+          font-size: var(--font-size-sm);
+          gap: var(--space-xs);
+          text-decoration: none;
+
+          span {
+          }
+
+          img {
+            height: calc(var(--space-sm) + 2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.play-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: hsl(var(--primary) / 0.9);
+  color: #000;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+
+  &:hover {
+    transform: scale(1.08);
+    background: hsl(var(--primary));
+  }
+}

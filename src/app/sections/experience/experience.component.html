@@ -1,0 +1,64 @@
+<div class="experience" id="experience">
+  <div class="experience-container container">
+    <label class="experience-container__label">Experience</label>
+
+    <div class="experience-container__jobs">
+      <div class="card" *ngFor="let experience of experienceJson">
+        <div class="card-indicator"></div>
+        <div class="card-job">
+          <div class="card-job__title">
+            <h3 class="text">
+              {{ experience.title }}
+            </h3>
+            <div class="period">
+              <span>{{ experience.period.start }}</span> -
+              <span>{{ experience.period.end }}</span>
+            </div>
+          </div>
+
+          <div class="card-job__meta">
+            <div class="info">
+              <img
+                src="./../../../assets/icons/buildings-icon.png"
+                alt="Buildings Icon"
+                class="info-icon"
+              />
+              <span class="info-text"
+                >{{ experience.company }} — {{ experience.engagement }}</span
+              >
+            </div>
+
+            <div class="info">
+              <img
+                src="./../../../assets/icons/location-icon.png"
+                alt="Location Icon"
+                class="info-icon"
+              />
+              <span class="info-text"
+                >{{ experience.location.type }} —
+                {{ experience.location.region }}</span
+              >
+            </div>
+          </div>
+          <p class="card-job__text">{{ experience.summary }}</p>
+
+          <ul
+            class="card-job__description"
+            *ngFor="let description of experience.responsibilities"
+          >
+            <li class="item">{{ description }}</li>
+          </ul>
+        </div>
+
+        <ul class="card-skills">
+          <li
+            class="card-skills__item"
+            *ngFor="let tech of experience.technologies"
+          >
+            {{ tech }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

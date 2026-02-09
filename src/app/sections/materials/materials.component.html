@@ -1,0 +1,38 @@
+<div class="materials" id="materials">
+  <div class="divider-gradient"></div>
+
+  <div class="materials-container container">
+    <label class="materials-container__label">Professional Materials</label>
+
+    <div class="materials-container__items">
+      <a
+        [href]="item.file"
+        class="item card-base"
+        download
+        *ngFor="let item of materials"
+        rel="noopener noreferrer"
+      >
+        <div class="item-title">
+          <div class="item-title__icon icon-no-border">
+            <img
+              src="./../../../assets/icons/document-primary-icon.png"
+              alt="Document Icon"
+              class="img"
+            />
+          </div>
+
+          <div class="item-title__text">
+            <h2 class="heading">
+              <span>{{ item.title }}</span>
+              <img
+                src="./../../../assets/icons/download-foreground-icon.png"
+                alt="Download Icon"
+              />
+            </h2>
+            <p class="description">{{ item.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

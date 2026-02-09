@@ -1,0 +1,36 @@
+<div class="skills" id="skills">
+  <div class="divider-gradient"></div>
+
+  <div class="skills-container container">
+    <label class="skills-container__label">Skills</label>
+
+    <div class="wrapper">
+      <div
+        class="skills-container__blocks card-base"
+        *ngFor="let group of skillsData"
+      >
+        <!-- Category title -->
+        <h3 class="title">
+          <div class="title-icon icon-no-border">
+            <!-- Optional icon mapping later -->
+            <img
+              [src]="getCategoryIcon(group.category)"
+              [alt]="group.category"
+              class="title-icon__img"
+            />
+          </div>
+
+          <span class="title-text">{{ group.category }}</span>
+        </h3>
+
+        <!-- Skills list -->
+        <ul class="talents">
+          <li class="talents-item" *ngFor="let skill of group.items">
+            {{ skill }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Category loop -->
+  </div>
+</div>

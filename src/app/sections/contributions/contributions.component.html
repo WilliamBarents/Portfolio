@@ -1,0 +1,44 @@
+<div class="contributions" id="contributions">
+  <div class="contributions-container container">
+    <label class="contributions-container__label"
+      >Selected Professional Contributions
+    </label>
+
+    <p class="contributions-container__text">
+      Public-facing websites I contributed to during my employment. These
+      references reflect frontend and presentation-layer work delivered as part
+      of a team.
+    </p>
+
+    <div class="contributions-container__sites">
+      <article class="site card-base" *ngFor="let work of workJson">
+        <div class="site-wrapper">
+          <div class="site-wrapper__title">
+            <h3 class="name">{{ work.name }}</h3>
+            <img
+              src="./../../../assets/icons/link-icon.png"
+              alt="Link Icon"
+              class="icon"
+            />
+          </div>
+
+          <ul
+            class="site-wrapper__descriptions"
+            *ngFor="let description of work.descriptions"
+          >
+            <li class="text">
+              {{ description }}
+            </li>
+          </ul>
+        </div>
+
+        <a [href]="work.url" class="site-link"
+          ><span>Visit website</span
+          ><img src="./../../../assets/icons/link-icon.png" alt="Link Icon"
+        /></a>
+      </article>
+    </div>
+  </div>
+
+  <div class="divider-gradient"></div>
+</div>

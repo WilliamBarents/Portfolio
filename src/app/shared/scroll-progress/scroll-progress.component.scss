@@ -1,0 +1,17 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+
+  background-color: hsl(var(--border) / 0.3);
+
+  &__bar {
+    height: 100%;
+    width: 0;
+    background-color: hsl(var(--primary));
+    transition: width 150ms ease-out;
+  }
+}
