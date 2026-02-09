@@ -332,3 +332,27 @@ body {
 .hide {
   display: none;
 }
+
+/* Scroll reveal base */
+[data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms ease-out,
+    transform 700ms ease-out;
+}
+
+/* Activated */
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

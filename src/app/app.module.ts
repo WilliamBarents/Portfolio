@@ -14,6 +14,7 @@ import { ContactComponent } from './sections/contact/contact.component';
 import { VideosComponent } from './sections/videos/videos.component';
 import { MaterialsComponent } from './sections/materials/materials.component';
 import { ScrollProgressComponent } from './shared/scroll-progress/scroll-progress.component';
+import { ScrollRevealDirective } from './core/directives/scroll-reveal.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ScrollProgressComponent } from './shared/scroll-progress/scroll-progres
     VideosComponent,
     MaterialsComponent,
     ScrollProgressComponent,
+    ScrollRevealDirective,
   ],
   imports: [BrowserModule],
   providers: [],
