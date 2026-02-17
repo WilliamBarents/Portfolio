@@ -11,21 +11,24 @@
       "start": "Apr 2023",
       "end": "Feb 2026"
     },
-    "summary": "Owned frontend and supported backend systems for production fintech and data-driven platforms.",
+    "summary": "Led frontend architecture and secure integration layers for production fintech platforms handling real-time trading and wallet data across multiple providers.",
     "responsibilities": [
-      "Built complex Angular dashboards with secure API integrations and real-time data flows",
-      "Supported secure credential handling and role-based access control implementations",
-      "Developed Telegram bots for operational monitoring and automation",
-      "Contributed to multiple product iterations across fintech and token-related platforms",
-      "Collaborated closely with backend and contract-adjacent development teams"
+      "Architected and built complex Angular dashboards with secure backend mediation and real-time data streaming",
+      "Designed and enforced role-based access control using Firebase Authentication and custom claims",
+      "Implemented secure credential handling with backend-only integrations and Secret Manager",
+      "Developed Telegram automation bots for operational monitoring, alerting, and workflow automation",
+      "Contributed to multi-tenant fintech and token-based platform iterations with strict project-level isolation",
+      "Ensured separation between frontend UI state and backend data authority across all integrations"
     ],
     "technologies": [
       "Angular",
       "TypeScript",
       "Firebase",
+      "Cloud Functions",
+      "Firestore",
       "REST APIs",
-      "Cloud Services",
-      "Telegram Bot API"
+      "Telegram Bot API",
+      "Cloud Infrastructure"
     ]
   },
   {
@@ -40,21 +43,22 @@
       "start": "Mar 2022",
       "end": "Mar 2023"
     },
-    "summary": "Served as primary frontend developer on e-commerce projects, building conversion-focused interfaces.",
+    "summary": "Delivered scalable, conversion-focused frontend systems for e-commerce platforms and contributed to early headless commerce transitions.",
     "responsibilities": [
-      "Led mobile-first redesigns aligned with modern UX/UI practices",
-      "Built e-commerce product pages and checkout flows focused on conversion",
-      "Developed reusable templates and CMS blocks",
-      "Paired with backend engineers on Magento integrations",
-      "Contributed to early React and Next.js adoption for headless commerce"
+      "Led mobile-first redesigns aligned with performance and UX best practices",
+      "Built optimized product pages and checkout flows focused on measurable conversion improvements",
+      "Developed reusable component systems and CMS-driven template architectures",
+      "Integrated Magento backend systems with API-driven frontend rendering",
+      "Contributed to React and Next.js adoption for headless commerce implementations"
     ],
     "technologies": [
-      "JavaScript",
-      "TypeScript",
       "React",
       "Next.js",
+      "TypeScript",
+      "JavaScript",
       "Magento",
-      "SCSS"
+      "SCSS",
+      "REST APIs"
     ]
   }
 ]
