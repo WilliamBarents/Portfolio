@@ -1,0 +1,149 @@
+<div
+  class="caseStudy"
+  id="case-study"
+  appScrollReveal
+  [threshold]="0"
+  rootMargin="0px 0px -100px 0px"
+  [triggerOnce]="true"
+  data-scroll-reveal
+>
+  <div class="caseStudy-container container">
+    <label class="caseStudy-container__label">Case Study</label>
+
+    <h2 class="caseStudy-container__title">
+      Secure Multi-Exchange Financial Monitoring Platform
+    </h2>
+
+    <h3 class="caseStudy-container__subheading">
+      System Architecture Case Study
+    </h3>
+
+    <ul class="caseStudy-container__stack">
+      <li class="stack" *ngFor="let stack of caseStudyJson.techTags">
+        {{ stack }}
+      </li>
+    </ul>
+
+    <div class="caseStudy-container__summary card-base">
+      <h4 class="title">Executive Summary</h4>
+      <p class="description">
+        I architected and delivered a production-grade monitoring dashboard for
+        a multi-account financial system, tracking trading activity and wallet
+        balances across multiple external providers in real time.
+      </p>
+
+      <p class="description">
+        Version 1 was implemented in Angular with a strict backend mediation
+        model. Version 2 was rebuilt in React, where I expanded a base UI
+        template into a fully production-ready application — implementing
+        authentication, RBAC, secure API orchestration, and a structured
+        ingestion pipeline.
+      </p>
+
+      <p class="description">
+        The system processed thousands of trade records daily, enforced
+        project-level isolation, and maintained strict secret handling using
+        Cloud Functions and Secret Manager. I owned the platform end-to-end
+        across frontend architecture, backend services, data modelling, and
+        infrastructure decisions.
+      </p>
+    </div>
+
+    <div class="caseStudy-container__overview card-base">
+      <div class="title">Architecture Overview</div>
+
+      <div class="layers">
+        <div
+          class="layers-layer"
+          *ngFor="let layer of caseStudyJson.architecture"
+        >
+          <h3 class="layers-layer__title">{{ layer.title }}</h3>
+          <ul class="ul layers-layer__list">
+            <li class="item" *ngFor="let item of layer.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="caseStudy-container__security card-base">
+      <h3 class="title">Security & Access Control</h3>
+      <ul class="list">
+        <li class="list-item" *ngFor="let item of caseStudyJson.security">
+          {{ item }}
+        </li>
+      </ul>
+
+      <div class="divider-gradient"></div>
+
+      <div class="process">
+        <h4 class="process-title">Security Boundary</h4>
+
+        <ul class="process-items">
+          <li class="process-items__item">Client</li>
+          <li class="process-items__arrow">→</li>
+          <li class="process-items__item">Cloud Function</li>
+          <li class="process-items__arrow">→</li>
+          <li class="process-items__item">Secret Manager</li>
+          <li class="process-items__arrow">→</li>
+          <li class="process-items__item">External API</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="caseStudy-container__dd">
+      <h3 class="title">Technical Deep Dive</h3>
+
+      <div class="dd">
+        <div
+          class="dd-question"
+          *ngFor="let item of caseStudyJson.deepDive; let i = index"
+        >
+          <button
+            class="dd-question__header card-base"
+            (click)="toggle(i)"
+            [attr.aria-expanded]="isOpen(i)"
+          >
+            <span>{{ item.title }}</span>
+
+            <img
+              src="./../../../assets//icons/arrow-primary-icon.png"
+              alt="Arrow icons"
+              class="icon"
+              [class.is-open]="isOpen(i)"
+            />
+          </button>
+
+          <div class="dd-question__body" [class.is-open]="isOpen(i)">
+            <ul class="items">
+              <li class="items-item" *ngFor="let dd of item.items">
+                {{ dd }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="caseStudy-container__challenges card-base">
+      <div class="title">Technical Challenges & Solutions</div>
+
+      <ul class="list" *ngFor="let item of caseStudyJson.challenges">
+        <li class="list-item">
+          <span>{{ item.problem }}</span> — {{ item.solution }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="caseStudy-container__improvements card-base">
+      <div class="title">If Rebuilding Today</div>
+
+      <ul class="list" *ngFor="let item of caseStudyJson.improvements">
+        <li class="list-item">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider-gradient"></div>
+</div>

@@ -118,7 +118,7 @@
   }
 }
 
-@media screen and (max-width: 824px) {
+@media screen and (max-width: 1200px) {
   .header {
     border: 0;
 
@@ -147,7 +147,7 @@
         }
 
         &.is-open {
-          height: calc(var(--space-xl) * 10.8);
+          height: calc(var(--space-xl) * 11.8);
           padding: var(--space-lg) var(--space-md);
         }
       }

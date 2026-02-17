@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navItems: { id: NavSection; label: string }[] = [
     { id: 'about', label: 'About' },
     { id: 'contributions', label: 'Work' },
+    { id: 'case-study', label: 'Case Study' },
     { id: 'videos', label: 'Videos' },
     { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
