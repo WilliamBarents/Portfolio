@@ -1,0 +1,125 @@
+{
+  "techTags": [
+    "Angular",
+    "TypeScript",
+    "Firebase",
+    "Cloud Functions",
+    "Firestore",
+    "Secret Manager",
+    "RxJS"
+  ],
+  "architecture": [
+    {
+      "title": "Frontend Layer",
+      "items": [
+        "Angular feature-first architecture",
+        "Lazy-loaded route modules",
+        "Strong TypeScript typing across all layers",
+        "Facade/service-store pattern with RxJS",
+        "No direct database access from components",
+        "All data accessed via callable functions"
+      ]
+    },
+    {
+      "title": "Backend Layer",
+      "items": [
+        "Firebase Cloud Functions (onCall + onRequest)",
+        "Google Cloud Scheduler for daily ingestion jobs",
+        "Secret Manager for API key storage",
+        "Strict IAM control over all credentials",
+        "Backend-only exchange integrations",
+        "Custom connectors for unsupported providers"
+      ]
+    },
+    {
+      "title": "Data Layer",
+      "items": [
+        "Firestore structured per project",
+        "Daily trade files stored per project",
+        "Deterministic dedupe strategy",
+        "Canonical daily record storage",
+        "Masked metadata only in client-visible documents"
+      ]
+    }
+  ],
+  "security": [
+    "Firebase Authentication with custom claims for role assignment",
+    "Whitelist document as source of truth for access",
+    "Users assigned to projects by owner/admin",
+    "Frontend route guards for UX acceleration",
+    "Backend authorization enforced on every function call",
+    "No secrets ever exposed to frontend",
+    "API keys stored in Secret Manager, masked references in Firestore only"
+  ],
+  "securityFlow": [
+    "Client",
+    "Cloud Function",
+    "Secret Manager",
+    "External API"
+  ],
+  "deepDive": [
+    {
+      "title": "Real-Time Data Strategy",
+      "items": [
+        "All exchange API calls executed server-side",
+        "Data written to Firestore only after validation",
+        "Frontend subscribed via controlled observable streams",
+        "Debounce/throttle to prevent UI jitter",
+        "Separation between live ingestion and display state",
+        "Avoided snapshot thrashing via selective listeners"
+      ]
+    },
+    {
+      "title": "Role-Based Access Model",
+      "items": [
+        "Multi-project access assignment",
+        "Owner/Admin define allowed projects per user",
+        "Access determined by whitelist document",
+        "Claims used for UX acceleration, not as sole authority",
+        "Server enforces project-level scoping on every call",
+        "Disabled users blocked server-side immediately"
+      ]
+    },
+    {
+      "title": "Data Ingestion Pipeline",
+      "items": [
+        "Daily scheduler job triggers ingestion per project",
+        "Fetches thousands of trade records per provider",
+        "Normalizes records into canonical format",
+        "Deduplicates using stable composite keys (timestamp + txId)",
+        "Stores per-day trade files with deterministic ordering",
+        "Maintains audit-friendly storage structure"
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "problem": "Real-time update jitter",
+      "solution": "Solved via RxJS staging + shareReplay caching"
+    },
+    {
+      "problem": "Pagination ceilings from external APIs",
+      "solution": "Implemented explicit loop handling with cursor tracking"
+    },
+    {
+      "problem": "Idempotency in data ingestion",
+      "solution": "Stable composite dedupe keys across all providers"
+    },
+    {
+      "problem": "Multi-tenant isolation",
+      "solution": "Strict project-scoped queries enforced at backend"
+    },
+    {
+      "problem": "Secret lifecycle management",
+      "solution": "Full backend mediation — zero client exposure"
+    }
+  ],
+  "improvements": [
+    "Versioned data contracts with schema validation at boundaries",
+    "Centralized authorization helper for all callable functions",
+    "Structured observability metrics and anomaly detection",
+    "Rate limiting + retry strategies with jitter",
+    "Automated CI/CD pipeline for deployment",
+    "Environment promotion workflow (dev → staging → prod)"
+  ]
+}

@@ -6,4 +6,5 @@ export type NavSection =
   | 'materials'
   | 'skills'
   | 'videos'
-  | 'zyneera';
+  | 'zyneera'
+  | 'case-study';

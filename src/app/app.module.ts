@@ -19,6 +19,10 @@ import { MaterialsComponent } from './sections/materials/materials.component';
 import { ScrollProgressComponent } from './shared/scroll-progress/scroll-progress.component';
 import { ScrollRevealDirective } from './core/directives/scroll-reveal.directive';
 import { environment } from 'src/environments/environment';
+import { CaseStudyComponent } from './sections/case-study/case-study.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+import { DropdownComponent } from './shared/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +40,13 @@ import { environment } from 'src/environments/environment';
     MaterialsComponent,
     ScrollProgressComponent,
     ScrollRevealDirective,
+    CaseStudyComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
+    OverlayModule,
+    PortalModule,
 
     // 🔥 Firebase
     provideFirebaseApp(() => initializeApp(environment.firebase)),
