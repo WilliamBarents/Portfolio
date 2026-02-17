@@ -27,31 +27,20 @@
 
     &__stack {
       display: flex;
-      font-size: var(--font-size-sm);
+      flex-wrap: wrap;
       gap: var(--space-xs);
       list-style: none;
-      flex-wrap: wrap;
       padding: 0;
-      margin: 0;
-      margin-bottom: calc(var(--space-xl) + 8px);
+      margin: 0 0 calc(var(--space-xl) + 8px);
+      font-size: var(--font-size-sm);
 
       .stack {
-        background-color: hsl(var(--accent));
-        border: 1px solid hsl(var(--primary) / 0.1);
-        border-radius: calc(var(--radius-lg) - 2px);
-        color: hsl(var(--accent-foreground));
-        text-wrap: nowrap;
         padding: calc(var(--space-3xs) + 2px) var(--space-sm);
-      }
-    }
-
-    &__summary {
-      margin-bottom: var(--space-xl);
-
-      .title {
-        color: hsl(var(--primary));
-        font-size: var(--font-size-sm);
-        text-transform: uppercase;
+        border-radius: calc(var(--radius-lg) - 2px);
+        background: hsl(var(--accent));
+        border: 1px solid hsl(var(--primary) / 0.1);
+        color: hsl(var(--accent-foreground));
+        white-space: nowrap;
       }
     }
 
@@ -61,6 +50,8 @@
     &__dd,
     &__challenges,
     &__improvements {
+      margin-bottom: var(--space-xl);
+
       .title {
         color: hsl(var(--primary));
         font-size: var(--font-size-sm);
@@ -68,9 +59,13 @@
         text-transform: uppercase;
       }
 
-      .description {
+      .description,
+      .list-item,
+      .items-item {
         font-size: var(--font-size-sm);
+      }
 
+      .description {
         &:last-child {
           margin-bottom: 0;
         }
@@ -225,6 +220,10 @@
             &-item::marker {
               color: hsl(var(--primary));
             }
+
+            &-item {
+              font-size: var(--font-size-sm);
+            }
           }
         }
       }
@@ -236,12 +235,16 @@
 
       .list {
         padding-left: var(--space-md);
+        margin-bottom: 0;
 
         &-item::marker {
           color: hsl(var(--primary));
         }
 
         &-item {
+          font-size: var(--font-size-sm);
+          margin-bottom: var(--space-xs);
+
           span {
             font-weight: 700;
           }
@@ -254,12 +257,20 @@
 
       .list {
         padding-left: var(--space-md);
+        margin-bottom: 0;
 
         &-item::marker {
           color: hsl(var(--primary));
         }
 
         &-item {
+          font-size: var(--font-size-sm);
+          margin-bottom: var(--space-xs);
+
+          &:last-child {
+            margin: 0;
+          }
+
           span {
             font-weight: 700;
           }
