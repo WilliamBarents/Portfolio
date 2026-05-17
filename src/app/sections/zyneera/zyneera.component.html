@@ -28,37 +28,87 @@
     </div>
 
     <p class="zyneera-container__text">
-      Zyneera is my independent business, where I build and operate my own
-      products. Unlike employment contributions, this section represents work
-      where I hold full ownership and creative control.
+      Zyneera is a B2B event procurement platform — a marketplace connecting
+      event planners with vendors. It replaces the fragmented workflow of email,
+      WhatsApp, and spreadsheets with a single platform covering vendor sourcing,
+      quoting, contracting, and payment coordination.
     </p>
 
     <div class="zyneera-container__card card-base">
       <div class="title">
-        <h3 class="title-heading">Building in Progress</h3>
+        <h3 class="title-heading">The Platform</h3>
         <div class="title-status">
           <span class="title-status__indicator indicator"></span>
           <span class="title-status__text">Active</span>
         </div>
       </div>
 
-      <div class="description">
-        Currently developing products and services under the Zyneera brand. Case
-        studies and detailed breakdowns will be added as projects reach public
-        release.
+      <div class="platform-sides">
+        <div class="platform-side">
+          <span class="platform-side__label">Planners</span>
+          <p class="platform-side__text">
+            The primary customer. Create events, source vendors, manage quotes,
+            approve invoices, and confirm work delivery.
+          </p>
+        </div>
+        <div class="platform-side">
+          <span class="platform-side__label">Vendors</span>
+          <p class="platform-side__text">
+            Suppliers — catering, AV, entertainment, photography. Bid on
+            categories, submit quotes, deliver on-site, and invoice through the
+            platform.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="workflow">
+        <p class="workflow__label">Core Procurement Workflow</p>
+        <div class="workflow__steps">
+          <ng-container *ngFor="let step of workflowSteps; let last = last">
+            <span class="workflow__step">{{ step }}</span>
+            <span class="workflow__arrow" *ngIf="!last">→</span>
+          </ng-container>
+        </div>
       </div>
 
       <hr />
 
       <p class="focus">
-        <span>Focus areas: </span>SaaS tooling, developer productivity, and
-        fintech utilities.
+        <span>Stack: </span>Firebase (Firestore · Cloud Functions v2 · Auth ·
+        Storage) · TypeScript · Resend
       </p>
     </div>
 
-    <p class="zyneera-container__disclaimer">
-      This section will expand with deeper technical case studies as Zyneera
-      projects are released publicly.
+    <div class="zyneera-container__stages">
+      <h3 class="stages-heading">Development Progress</h3>
+      <div class="stages-list">
+        <div
+          class="stage"
+          [ngClass]="'stage--' + stage.status"
+          *ngFor="let stage of stages; let last = last"
+        >
+          <div class="stage-track">
+            <span class="stage-track__dot"></span>
+            <span class="stage-track__line" *ngIf="!last"></span>
+          </div>
+          <div class="stage-content">
+            <div class="stage-content__header">
+              <span class="stage-number">Stage {{ stage.number }}</span>
+              <span class="stage-badge">{{ stage.statusLabel }}</span>
+            </div>
+            <h4 class="stage-content__title">{{ stage.title }}</h4>
+            <p class="stage-content__description">{{ stage.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="zyneera-container__meta">
+      Stage 5 of 8 — The backend is production-ready in terms of architecture
+      and security. Feature-complete on the server side and actively being wired
+      to a frontend ahead of alpha testing.
     </p>
   </div>
 </div>
