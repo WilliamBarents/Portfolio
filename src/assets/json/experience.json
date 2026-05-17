@@ -1,5 +1,37 @@
 [
   {
+    "title": "Founder & Chief Technology Officer",
+    "company": "Zyneera",
+    "engagement": "Self-employed",
+    "location": {
+      "type": "Hybrid",
+      "region": "South Africa"
+    },
+    "period": {
+      "start": "2025",
+      "end": "Present"
+    },
+    "summary": "Founded and led development of a multi-tenant SaaS platform for event procurement and management, serving planners and vendors within a unified ecosystem.",
+    "responsibilities": [
+      "Architected a scalable full-stack solution using React and Firebase (Firestore, Cloud Functions) with real-time data synchronization",
+      "Designed and enforced RBAC and secure authentication (Firebase Auth) for multi-tenant access control and user lifecycle management",
+      "Built core platform systems including real-time messaging, ticketing/workflows, and subscription-based feature gating",
+      "Integrated Paystack for payments, subscriptions, and payouts, and Resend for transactional email infrastructure",
+      "Structured scalable Firestore data models optimized for performance and efficient querying",
+      "Led the full software lifecycle from architecture through deployment and continuous iteration"
+    ],
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Cloud Functions",
+      "Firestore",
+      "Firebase Auth",
+      "Paystack",
+      "Resend"
+    ]
+  },
+  {
     "title": "Senior Frontend Engineer",
     "company": "MCE Group",
     "engagement": "Contract",

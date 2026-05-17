@@ -7,6 +7,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding: 0 var(--space-lg);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -65,6 +66,7 @@
     &__title {
       font-size: var(--space-3xl);
       font-weight: 700;
+      margin-bottom: var(--space-lg);
     }
 
     &__stack {
@@ -72,6 +74,7 @@
       font-size: var(--space-lg);
       gap: var(--space-sm);
       list-style: none;
+      margin-bottom: var(--space-lg);
       padding: 0;
 
       .stack {
@@ -113,6 +116,8 @@
 
       &__stack {
         font-size: calc(var(--space-md) + 4px);
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       &__text {
