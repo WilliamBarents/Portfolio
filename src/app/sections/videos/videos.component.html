@@ -19,23 +19,17 @@
       <article class="card card-base" *ngFor="let video of videos">
         <div class="card-wrapper">
           <div class="card-wrapper__media">
-            <ng-container *ngIf="activeVideoId !== video.id; else player">
-              <div class="video-thumb" (click)="playVideo(video.id)">
-                <img
-                  [src]="getThumbnail(video.youtubeId)"
-                  alt="{{ video.title }}"
-                />
-                <button class="play-btn" type="button">▶</button>
-              </div>
-
-              <ng-template #player>
-                <iframe
-                  [src]="getEmbedUrl(video.youtubeId)"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen
-                ></iframe>
-              </ng-template>
-            </ng-container>
+            <div
+              class="video-thumb"
+              *ngIf="activeVideoId !== video.id; else player"
+              (click)="playVideo(video.id)"
+            >
+              <img
+                [src]="getThumbnail(video.youtubeId)"
+                alt="{{ video.title }}"
+              />
+              <button class="play-btn" type="button">▶</button>
+            </div>
 
             <ng-template #player>
               <iframe
@@ -43,6 +37,12 @@
                 allow="autoplay; encrypted-media"
                 allowfullscreen
               ></iframe>
+              <button
+                class="stop-btn"
+                type="button"
+                (click)="stopVideo()"
+                title="Stop video"
+              >✕</button>
             </ng-template>
           </div>
 

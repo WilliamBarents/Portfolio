@@ -15,8 +15,10 @@
     }
 
     &__jobs {
-      display: flex;
-      gap: var(--space-md);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 560px));
+      gap: var(--space-xl);
+      justify-content: center;
       width: 100%;
 
       .card {
@@ -27,11 +29,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--space-lg);
+        padding: var(--space-xl);
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
-        width: 100%;
 
         &:hover {
           border-color: hsl(var(--primary) / 0.3);
@@ -39,6 +40,14 @@
           .card-indicator {
             opacity: 1;
           }
+        }
+
+        &:last-child:nth-child(odd) {
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: minmax(0, 560px);
+          max-width: 560px;
+          width: 100%;
         }
 
         &-indicator {
@@ -53,13 +62,13 @@
         }
 
         &-job {
-          margin-bottom: var(--space-md);
+          margin-bottom: var(--space-xl);
 
           &__title {
             align-items: center;
             display: flex;
             justify-content: space-between;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-lg);
 
             .text {
               font-size: var(--font-size-md);
@@ -99,12 +108,18 @@
 
           &__text {
             font-size: var(--font-size-sm);
+            margin-top: var(--space-xs);
+            margin-bottom: var(--space-sm);
           }
 
           &__description {
             font-size: var(--font-size-sm);
+            margin: 0;
+            padding-left: var(--space-lg);
 
             .item {
+              margin-bottom: var(--space-2xs);
+
               &::marker {
                 color: hsl(var(--primary));
               }
@@ -135,16 +150,16 @@
   }
 }
 
-@media screen and (max-width: 994px) {
+@media screen and (max-width: 767px) {
   .experience {
     &-container {
       &__jobs {
-        flex-direction: column;
-        justify-content: flex-start;
+        grid-template-columns: 1fr;
 
-        .card {
+        .card:last-child:nth-child(odd) {
+          grid-column: auto;
+          justify-self: auto;
           max-width: 100%;
-          width: 100%;
         }
       }
     }
